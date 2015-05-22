@@ -52,9 +52,11 @@ echo <<<OUT
 	</div>
 </nav>
 
-<div class="container-fluid ">
+<div class="container" >
 	<div class="row browse-item">
 		<div class="col-xs-2 text-center">
+		</div>
+		<div class="col-xs-3 text-center">
 		<img src="pdf17.png">
 		</div>
 		<div class="col-xs-6">
@@ -64,6 +66,8 @@ echo <<<OUT
 	</div>
 	<div class="row browse-item">
 		<div class="col-xs-2 text-center">
+		</div>
+		<div class="col-xs-3 text-center">
 		<img src="pdf17.png">
 		</div>
 		<div class="col-xs-6">
@@ -73,6 +77,8 @@ echo <<<OUT
 	</div>
 	<div class="row browse-item">
 		<div class="col-xs-2 text-center">
+		</div>
+		<div class="col-xs-3 text-center">
 		<img src="pdf17.png">
 		</div>
 		<div class="col-xs-6">
@@ -82,6 +88,8 @@ echo <<<OUT
 	</div>
 	<div class="row browse-item">
 		<div class="col-xs-2 text-center">
+		</div>
+		<div class="col-xs-3 text-center">
 		<img src="pdf17.png">
 		</div>
 		<div class="col-xs-6">
@@ -89,6 +97,18 @@ echo <<<OUT
 		<p>Lorem ipsum dolor sit amet, consectetur a </p>
 		</div>
 	</div>
+	<div class="row browse-item">
+		<div class="col-xs-2 text-center">
+		</div>
+		<div class="col-xs-3 text-center">
+		<img src="pdf17.png">
+		</div>
+		<div class="col-xs-6">
+		<h4>Lorem ipsum</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur a </p>
+		</div>
+	</div>
+
 </div>
 
 
