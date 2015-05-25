@@ -5,11 +5,24 @@ require_once("myLib/myFs.php"); //Codigo para manejo de passwords.
 
 noExpire();
 
+if(haySesion())
+{
+	iniciarDirectorio();
+}
+
+if($_POST['nuevoDirectorio'] != "")
+{
+	cambiarDirectorio($_POST['nuevoDirectorio']);
+}
+
+if($_POST['regresarDirectorio'] == "true")
+{
+	cambiarDirectorio("..");
+}
+
+
 //Conexion a la base de datos
 $conexion = conectarDb();
-
-//Inicializar directorio
-iniciarDirectorio();
 
 //Abrir encabezado de body y html
 echo <<<OUT
@@ -52,67 +65,19 @@ echo <<<OUT
 	</div>
 </nav>
 
-<div class="container" >
-	<div class="row browse-item">
-		<div class="col-xs-2 text-center">
-		</div>
-		<div class="col-xs-3 text-center">
-		<img src="pdf17.png">
-		</div>
-		<div class="col-xs-6">
-		<h4>Lorem ipsum</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur a </p>
-		</div>
-	</div>
-	<div class="row browse-item">
-		<div class="col-xs-2 text-center">
-		</div>
-		<div class="col-xs-3 text-center">
-		<img src="pdf17.png">
-		</div>
-		<div class="col-xs-6">
-		<h4>Lorem ipsum</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur a </p>
-		</div>
-	</div>
-	<div class="row browse-item">
-		<div class="col-xs-2 text-center">
-		</div>
-		<div class="col-xs-3 text-center">
-		<img src="pdf17.png">
-		</div>
-		<div class="col-xs-6">
-		<h4>Lorem ipsum</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur a </p>
-		</div>
-	</div>
-	<div class="row browse-item">
-		<div class="col-xs-2 text-center">
-		</div>
-		<div class="col-xs-3 text-center">
-		<img src="pdf17.png">
-		</div>
-		<div class="col-xs-6">
-		<h4>Lorem ipsum</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur a </p>
-		</div>
-	</div>
-	<div class="row browse-item">
-		<div class="col-xs-2 text-center">
-		</div>
-		<div class="col-xs-3 text-center">
-		<img src="pdf17.png">
-		</div>
-		<div class="col-xs-6">
-		<h4>Lorem ipsum</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur a </p>
-		</div>
-	</div>
+<div class="container">
+<div class="row">
+<form action="fileHome.php" class="left-link important-link" method="post">
+	<input type="hidden" name="regresarDirectorio" value="true">
+	<input class="btn-link" type="submit" name="submitRegresar" value="Regresar una carpeta">
+</form>
 
 </div>
-
+</div>
 
 OUT;
+
+mostrarArchivos();
 
 //Javascript para bootstrap
 echo <<<OUT
